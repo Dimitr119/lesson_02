@@ -14,14 +14,14 @@ def save_to_disk(json_content: List[Dict[str, Any]], path: str) -> None:
     
     file_name = f'sales_{path.split("/")[-1]}.json'
     full_path = BASE_DIR + path
+
+    print(full_path)
     
     with open(full_path + '/' + file_name, mode = 'w') as json_file:
         json.dump(json_content, json_file, indent = 4)
 
 
 def transform_json_to_avro(path: str) -> None:
-
-
 
     schema_file = 'schema.avsc'
 
