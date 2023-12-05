@@ -18,7 +18,7 @@ def get_sales(date: str) -> List[Dict[str, Any]]:
             headers = {'Authorization': AUTH_TOKEN}
         )
         
-        if response.status_code == 400:
+        if response.status_code == 404:
             break
 
         result += response.json()
